@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footwork Sports POS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Footwork Sports</h1>
+        </div>
+        <button class="retrieve-btn" onclick="window.location.href='output.html';">Retrieve Data</button>
+    </header>
+    <div class="main-content">
+        <div class="customer-input">
+            <label for="customer-name">Customer Name</label>
+            <input type="text" id="customer-name" placeholder="Enter customer name" required>
+        </div>
+        <div class="court-selection">
+            <h2>Select Court</h2>
+            <div class="courts">
+                <button id="court-1" class="court-btn" onclick="selectCourt(1)">Court 1</button>
+                <button id="court-2" class="court-btn" onclick="selectCourt(2)">Court 2</button>
+                <button id="court-3" class="court-btn" onclick="selectCourt(3)">Court 3</button>
+            </div>
+        </div>
+        <div class="item-selection">
+            <h2>Select Items</h2>
+            <div class="item-grid">
+                <div class="item">
+                    <img src="images/shoes.png" id="shoes-image" class="item-image" alt="Shoes">
+                    <input type="number" id="shoes-quantity" class="item-quantity" value="0" min="0">
+                    <label for="shoes-quantity">Shoes - ₹50</label>
+                </div>
+                <div class="item">
+                    <img src="images/socks.png" id="socks-image" class="item-image" alt="Socks">
+                    <input type="number" id="socks-quantity" class="item-quantity" value="0" min="0">
+                    <label for="socks-quantity">Socks - ₹50</label>
+                </div>
+                <div class="item">
+                    <img src="images/racquet.png" id="racquet-image" class="item-image" alt="Racquet">
+                    <input type="number" id="racquet-quantity" class="item-quantity" value="0" min="0">
+                    <label for="racquet-quantity">Racquet - ₹50</label>
+                </div>
+                <div class="item">
+                    <img src="images/shuttlecock.png" id="shuttlecock-image" class="item-image" alt="Shuttle Cock">
+                    <input type="number" id="shuttlecock-quantity" class="item-quantity" value="0" min="0">
+                    <label for="shuttlecock-quantity">Shuttle Cock - ₹250</label>
+                </div>
+                <div class="item">
+                    <img src="images/grip.png" id="grip-image" class="item-image" alt="Grip">
+                    <input type="number" id="grip-quantity" class="item-quantity" value="0" min="0">
+                    <label for="grip-quantity">Grip - ₹100</label>
+                </div>
+                <div class="item">
+                    <img src="images/shower.png" id="shower-image" class="item-image" alt="Shower">
+                    <input type="number" id="shower-quantity" class="item-quantity" value="0" min="0">
+                    <label for="shower-quantity">Shower - ₹50</label>
+                </div>
+            </div>
+        </div>
+        <div id="summary" class="summary">
+            <h2>Real-Time Summary</h2>
+            <table id="summary-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Summary rows will be inserted here -->
+                </tbody>
+            </table>
+            <p id="total-amount"><strong>Total Amount: ₹0</strong></p>
+        </div>
+        <button class="save-btn" onclick="saveData()">Save Data</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

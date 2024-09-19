@@ -1,0 +1,295 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f5f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #2A75BB;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.datetime {
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+/* Button Styling */
+button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.retrieve-btn, .go-back-btn {
+    background-color: #ff9800;
+    color: white;
+}
+
+.retrieve-btn:hover, .go-back-btn:hover {
+    background-color: #e68900;
+}
+
+.save-btn {
+    padding: 12px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #45a049;
+}
+
+/* Main Content Styling */
+.main-content {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Section Styling */
+.customer-input, .court-selection, .item-selection {
+    margin-bottom: 20px;
+}
+
+.customer-input label, .court-selection h2, .item-selection h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+.customer-input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.customer-input input:focus {
+    border-color: #2A75BB;
+    outline: none;
+}
+
+/* Court Selection Styling */
+.courts {
+    display: flex;
+    gap: 15px;
+}
+
+.court-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #2A75BB;
+    color: white;
+}
+
+.court-btn:hover {
+    background-color: #245d93;
+}
+
+.court-btn.selected {
+    background-color: #1e5b8a;
+    transform: scale(1.05);
+}
+
+/* Item Grid Styling */
+.item-selection {
+    padding: 10px;
+}
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.item {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.item img.clicked {
+    transform: scale(1.1);
+}
+
+.item input {
+    margin-top: 10px;
+}
+
+/* Table Styling for Summary Page */
+.summary {
+    margin-top: 20px;
+}
+
+.summary table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.summary table th, .summary table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.summary table th {
+    background-color: #2A75BB;
+    color: white;
+    font-weight: bold;
+}
+
+.summary table td {
+    color: #555;
+}
+
+.summary table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Total Amount Row Styling */
+.total-row {
+    font-weight: bold;
+    background-color: #f5f5f5;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-content {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .courts {
+        flex-direction: column;
+    }
+
+    .court-btn {
+        width: 100%;
+    }
+
+    .summary table th, .summary table td {
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+/* Feedback Message Styling */
+.feedback-message {
+    color: #d9534f; /* Error color */
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Success Message Color */
+.feedback-message.success {
+    color: #5bc0de; /* Success color */
+}
+
+/* CSS Animations */
+.court-btn.selected {
+    background-color: #1e5b8a;
+    transform: scale(1.05);
+}
+
+.save-btn.clicked {
+    background-color: #45a049;
+    transform: scale(0.98);
+}
+
+.item-image.clicked {
+    animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Table Styling for Output Page */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #2A75BB;
+    color: white;
+    font-weight: bold;
+}
+
+table td {
+    color: #555;
+}
+
+table tbody tr:hover {
+    background-color: #f9f9f9;
+}
